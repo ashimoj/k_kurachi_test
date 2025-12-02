@@ -1,0 +1,41 @@
+@use '../global' as *;
+
+/*  js-mv
+----------------------------------- */
+.js-mv{
+  .js-mv__img{
+    transition: .6s cubic-bezier(0.43, 0.68, 0.35, 1.13);
+    transition-property: translate, rotate;
+  }
+
+  // 発火後
+  .js-mv__img.-left.show{
+    rotate: 10deg;
+    transform-origin: bottom left;
+    translate: 50% -50%;
+  }
+  .js-mv__img.-right.show{
+    rotate: -10deg;
+    translate: -150% -50%;
+    transform-origin: bottom right;
+  }
+}
+
+/*  js-mv-end
+----------------------------------- */
+.js-mv-end{
+  .js-mv-end__img{
+    transition: .6s cubic-bezier(0.43, 0.68, 0.35, 1.13);
+    transition-property: translate, rotate;
+  }
+
+  // 発火後
+  .js-mv-end__img.-left.is-active{
+    rotate: 0deg;
+    translate: 0;
+  }
+  .js-mv-end__img.-right.is-active{
+    rotate: 0deg;
+    translate: 0;
+  }
+}

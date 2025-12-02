@@ -3,8 +3,67 @@ import Layouts from "../layouts/Layouts.astro";
 ---
 
 <Layouts title="TOP" path="/">
-    <main id="main">
-        <h2>Front-page</h2>
-        <p>TOPページの内容が入ります。</p>
-    </main>
+  <main id="main" class="p-index-home">
+
+    <!-- MV -->
+    <div class="p-mv js-mv">
+      <div class="p-mv__ttlWrap">
+        <h2 class="p-mv__ttl">人がつくる精度、<br>人がつなぐ信頼。</h2>
+      </div>
+      <div class="p-mv__imgWrap">
+        <figure class="p-mv__img js-mv__img">
+          <img src="/assets/images/home/img-mv01.png" alt="" decoding='async'>
+        </figure>
+        <figure class="p-mv__img js-mv__img -left">
+          <img src="/assets/images/home/img-mv02.png" alt="" decoding='async'>
+        </figure>
+        <figure class="p-mv__img js-mv__img -right">
+          <img src="/assets/images/home/img-mv03.png" alt="" decoding='async'>
+        </figure>
+      </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="p-index-message">
+      <figure>
+        <img src="/assets/images/home/about.png" alt="" decoding='async'>
+      </figure>
+      <!-- <div class="p-index-message__contents">
+        <p class="p-index-message__txt">倉知製作所の価値を支えるのは、<br>「精度をつくる技術力」と「人を育てる文化力」</p>
+        <div class="p-index-message__ttlWrap">
+          <div class="p-index-message__ttl">
+            <p class="p-index-message__ttl-en" lang="en">Technical Excellence</p>
+            <p class="p-index-message__ttl-ja">技術力</p>
+          </div>
+          <div class="p-index-message__ttl">
+            <p class="p-index-message__ttl-en" lang="en">Human &amp; Culture Excellence</p>
+            <p class="p-index-message__ttl-ja">人/文化</p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- ENDDING -->
+    <div class="p-index-end js-mv-end">
+      <div class="p-index-end__ttlWrap">
+        <h2 class="p-index-end__ttl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="179" height="66" viewBox="0 0 179 66" fill="none">
+            <path d="M93.2622 56.7734C93.7417 52.6168 93.9436 49.398 93.9436 44.1768V13.7625C93.9436 7.65428 93.7417 4.84095 93.2622 1.16588H106.183V6.10821C106.183 6.69116 106.183 8.13584 106.082 9.6819C108.883 3.77645 116.025 0 124.024 0C129.223 0 133.488 1.44468 136.466 4.35939C138.207 5.90545 138.964 7.17272 140.125 10.1635C143.405 5.80407 145.248 4.05525 148.225 2.50918C151.405 0.760359 154.686 0 159.026 0C165.209 0 170.206 1.92624 173.486 5.52527C176.666 9.02292 178.029 13.3823 178.029 20.2509V44.1768C178.029 49.6007 178.231 52.7942 178.811 56.7734H164.73C165.31 52.7942 165.512 49.9049 165.512 44.1768V22.4813C165.512 13.9653 162.509 10.0874 156.048 10.0874C152.869 10.0874 150.446 10.9492 148.15 13.0021C144.768 15.9168 143.229 19.009 142.068 25.0158V44.2022C142.068 49.5247 142.27 52.8196 142.749 56.7988H128.87C129.45 52.7182 129.652 49.7275 129.652 44.2022V22.5066C129.652 14.3708 126.573 10.2902 120.29 10.2902C116.227 10.2902 112.971 11.9376 110.347 15.3339C108.227 18.1472 107.268 20.3776 106.208 25.0158V44.2022C106.208 49.4233 106.41 52.338 106.889 56.7988H93.2874L93.2622 56.7734Z" fill="#202020"/>
+            <path d="M72.8514 50.0364C68.2494 53.988 63.9241 55.8001 59.0959 55.8001C53.7144 55.8001 49.8669 52.5281 49.8669 47.9222C49.8669 47.7208 49.8669 46.8651 49.9674 45.808C48.4335 48.8031 47.3773 50.0364 45.2649 51.6724C41.7192 54.3655 37.1927 55.8001 32.289 55.8001C24.7951 55.8001 19.992 52.6288 18.3574 46.3617L15.9433 55.4981C14.9877 59.2483 14.5099 62.1428 14.3087 65.2134H0C1.25736 62.4196 2.96737 57.6123 4.22473 52.9057L15.0883 12.5091C16.9241 5.76375 17.5024 3.17132 17.6785 0H31.9118C30.1766 3.95157 28.8438 7.87796 27.5865 12.5091L23.4623 27.9127C22.8839 29.9262 22.6073 32.0404 22.6073 34.0791C22.6073 40.9 26.1531 44.8515 32.4147 44.8515C36.6394 44.8515 40.487 43.1149 43.6555 39.8429C46.1451 37.2504 47.7796 34.1546 49.037 29.5487L53.5635 12.5091C55.1981 6.44332 55.7764 3.75021 56.0531 0H70.1858C68.6518 3.272 68.0734 5.10935 66.0616 12.5091L58.769 39.4401C58.5678 40.2959 58.4923 41.0761 58.4923 41.8564C58.4923 43.8699 59.8503 45.1284 61.8621 45.1284C64.1756 45.1284 66.288 43.9706 68.4003 41.3782L72.9268 50.0364H72.8514Z" fill="#202020"/>
+            </svg>
+          の精度で、<br>未来に応える。</h2>
+      </div>
+      <div class="p-index-end__imgWrap">
+        <figure class="p-index-end__img js-mv-end__img">
+          <img src="/assets/images/home/img-mv01.png" alt="" decoding='async'>
+        </figure>
+        <figure class="p-index-end__img js-mv-end__img -left">
+          <img src="/assets/images/home/img-mv02.png" alt="" decoding='async'>
+        </figure>
+        <figure class="p-index-end__img js-mv-end__img -right">
+          <img src="/assets/images/home/img-mv03.png" alt="" decoding='async'>
+        </figure>
+      </div>
+    </div>
+  </main>
 </Layouts>

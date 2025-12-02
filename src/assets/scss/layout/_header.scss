@@ -1,25 +1,37 @@
 @use '../global' as *;
 
 .l-header {
-  width: 100%;
-  height: var(--size-header-h);
-  display: flex;
-  justify-content: center;
-  align-content: center;
   position: fixed;
   left: 0;
   top: 0;
+  width: calc(100% - 40px);
+  height: var(--size-header-h);
+  display: flex;
+  align-content: center;
   z-index: var(--z-header);
-
+  margin: 20px 20px 0;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--clr_border);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.8s ease;
+  }
   .l-header__inner {
-    padding-inline: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
   }
 
   .l-header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     width: 160px;
     z-index: var(--z-header-logo);
@@ -31,6 +43,22 @@
 
     img {
       width: 100%;
+    }
+  }
+  @include mq (large){
+    .l-header__logo {
+      width: 270px;
+    }
+    .l-header__logo-link {
+      width: 200px;
+    }
+  }
+}
+
+.is-loaded{
+  .l-header{
+    &::before {
+      transform: scaleX(1);
     }
   }
 }

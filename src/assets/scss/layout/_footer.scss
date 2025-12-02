@@ -1,4 +1,11 @@
 @use '../global' as *;
 
 .l-footer {
+  img{
+    width: 100%;
+  }
+  .l-footer__copy{
+    padding: 20px 0;
+    text-align: center;
+  }
 }

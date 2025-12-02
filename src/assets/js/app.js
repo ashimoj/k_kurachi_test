@@ -9,6 +9,7 @@ import { drawer, fixedHeader } from "./libs/Header";
 // import { articleTable, ScrollHintFunc } from './libs/ScrollHint';
 // import { slider } from './libs/Slider';
 // import { tabFunc } from './libs/Tab';
+import { mvAnim, mvEndAnim } from './libs/Mv';
 
 // 実行
 // ==========================
@@ -17,6 +18,8 @@ window.addEventListener("DOMContentLoaded", () => {
     fixedHeader();
     drawer();
     lenisPageScroll();
+    mvAnim();
+    mvEndAnim();
     // addAutoFunc();
     // numKeyFunc();
     // accordionFunc();
