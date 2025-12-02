@@ -1,0 +1,81 @@
+@use '../global' as *;
+
+@for $i from 0 through 200 {
+  .u-mt-#{$i} {
+    margin-top: $i * 1px !important;
+  }
+  .u-mb-#{$i} {
+    margin-bottom: $i * 1px !important;
+  }
+  .u-pt-#{$i} {
+    padding-top: $i * 1px !important;
+  }
+  .u-pb-#{$i} {
+    padding-bottom: $i * 1px !important;
+  }
+  @include mqUnder(1024) {
+    .u-under-mt-#{$i} {
+      margin-top: $i * 1px !important;
+    }
+    .u-under-mb-#{$i} {
+      margin-bottom: $i * 1px !important;
+    }
+    .u-under-pt-#{$i} {
+      padding-top: $i * 1px !important;
+    }
+    .u-under-pb-#{$i} {
+      padding-bottom: $i * 1px !important;
+    }
+    .u-under-ml-auto {
+      margin-right: 0 !important;
+      margin-left: auto !important;
+    }
+    .u-under-mr-auto {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+    .u-under-m-center {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+  @include mq(large) {
+    .u-upper-mt-#{$i} {
+      margin-top: $i * 1px !important;
+    }
+    .u-upper-mb-#{$i} {
+      margin-bottom: $i * 1px !important;
+    }
+    .u-upper-pt-#{$i} {
+      padding-top: $i * 1px !important;
+    }
+    .u-upper-pb-#{$i} {
+      padding-bottom: $i * 1px !important;
+    }
+    .u-upper-ml-auto {
+      margin-right: 0 !important;
+      margin-left: auto !important;
+    }
+    .u-upper-mr-auto {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+    .u-upper-m-center {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
+//sp pc共通
+.u-ml-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+.u-mr-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.u-m-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

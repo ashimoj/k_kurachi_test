@@ -1,0 +1,58 @@
+@use '../global' as *;
+
+.l-header {
+  width: 100%;
+  height: var(--size-header-h);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: var(--z-header);
+
+  .l-header__inner {
+    padding-inline: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .l-header__logo {
+    flex-shrink: 0;
+    width: 160px;
+    z-index: var(--z-header-logo);
+  }
+  .l-header__logo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* 	本文スキップボタン
+---------------------------------------------*/
+.l-header__skip-content {
+  @media (hover: hover) and (pointer: fine) {
+    &:focus-visible {
+      padding: 1rem 2rem;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: var(--z-skip-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      background-color: var(--clr_primary);
+    }
+  }
+}

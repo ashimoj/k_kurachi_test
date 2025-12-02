@@ -1,0 +1,28 @@
+@use '../global' as *;
+
+.l-navigation {
+  height: 100%;
+  @if $wide_hamburger == false {
+    display: none;
+    @include mq(hamburger) {
+      display: revert;
+    }
+  }
+
+  .l-navigation__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .l-navigation__link {
+    display: block;
+    transition: var(--transition);
+    transition-property: opacity;
+
+    @include hover {
+      opacity: 0.5;
+    }
+  }
+}

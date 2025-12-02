@@ -1,0 +1,45 @@
+@use '../global' as *;
+
+.l-drawer {
+  --nav-space: 40px;
+
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-drawer);
+  transform: translateX(120%);
+  transition: var(--transition);
+  visibility: hidden;
+  transition-property: transform, visibility;
+
+  &[aria-hidden='false'] {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .l-drawer__nav {
+    height: 100vh;
+    background: #fff;
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .l-drawer__list {
+    padding: calc(var(--size-header-h) + var(--nav-space)) 5% 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @if $wide_hamburger == false {
+    @include mq(hamburger) {
+      display: none;
+    }
+  }
+}

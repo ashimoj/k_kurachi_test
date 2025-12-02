@@ -1,0 +1,58 @@
+@use '../global' as *;
+
+.c-hamburger {
+  --bar-width: 30px;
+  --bar-height: 2px;
+  --bar-space: 10px;
+
+  width: var(--size-header-h);
+  height: var(--size-header-h);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--z-hamburger);
+
+  span {
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--clr_default);
+    position: absolute;
+    left: calc((var(--size-header-h) - var(--bar-width)) / 2);
+    transition: var(--transition);
+    transition-property: top rotate;
+
+    &:nth-of-type(1) {
+      top: calc(var(--size-header-h) / 2 - (var(--bar-height) / 2) - var(--bar-space));
+    }
+    &:nth-of-type(2) {
+      top: calc(var(--size-header-h) / 2 - (var(--bar-height) / 2));
+    }
+    &:nth-of-type(3) {
+      top: calc(var(--size-header-h) / 2 - (var(--bar-height) / 2) + var(--bar-space));
+    }
+  }
+
+  @if $wide_hamburger == false {
+    @include mq(hamburger) {
+      display: none;
+    }
+  }
+}
+
+/* 	メニュー展開時
+---------------------------------------------*/
+.is-open.c-hamburger {
+  span {
+    &:nth-of-type(1) {
+      top: calc(var(--size-header-h) / 2 - (var(--bar-height) / 2));
+      rotate: 45deg;
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      top: calc(var(--size-header-h) / 2 - (var(--bar-height) / 2));
+      rotate: -45deg;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../global' as *;
+
+.c-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  .c-cats__link {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    @include hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}

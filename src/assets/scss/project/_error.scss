@@ -1,0 +1,13 @@
+@use '../global' as *;
+
+.p-error {
+  .p-error__title {
+    @include font_en;
+  }
+
+  .p-error__textWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

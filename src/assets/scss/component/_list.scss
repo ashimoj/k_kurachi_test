@@ -1,0 +1,20 @@
+@use "../global/" as *;
+
+/*  c-list01
+----------------------------------- */
+.c-list01{
+  .c-list01__item{
+    position: relative;
+    padding-left: 8px;
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 2px;
+      background: var(--clr_primary);
+      top: 13px;
+      left: 0;
+    }
+  }
+}

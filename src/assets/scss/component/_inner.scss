@@ -1,0 +1,15 @@
+@use '../global/' as *;
+
+.c-inner {
+  margin-inline: auto;
+  width: var(--inner-sp);
+  max-width: var(--inner);
+
+  &.-lg {
+    max-width: var(--inner-lg);
+  }
+
+  &.-sm {
+    max-width: var(--inner-sm);
+  }
+}

@@ -1,0 +1,157 @@
+@use "sass:map";
+@use "../global" as *;
+
+html {
+    font-size: 100%;
+    &:not([lang="ja"]) {
+        word-break: break-word;
+    }
+
+    @media not screen and (min-width: #{map.get($breakpoints, "hamburger")}) {
+        &:has(.l-drawer[aria-hidden="false"]) {
+            overflow: hidden;
+        }
+    }
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    color: var(--clr_default);
+    background-color: #fff;
+    @include font_base();
+}
+body *,
+body *::before,
+body *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-size: revert;
+    @include font_title;
+}
+a {
+    display: inline-block;
+    color: currentColor;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+dt {
+    font-weight: 700;
+}
+summary {
+    display: block;
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+span {
+    font-weight: inherit;
+}
+small {
+    font-size: 100%;
+}
+button,
+input,
+select,
+textarea {
+    appearance: revert;
+    border-width: 1px;
+    background-color: transparent;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+address {
+    font-style: normal;
+}
+
+/* 選択系パーツ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+button,
+select,
+option {
+    display: block;
+    width: 100%;
+    font: inherit;
+    border-radius: 0;
+}
+textarea {
+    resize: vertical;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+    vertical-align: revert;
+}
+
+/* 	スクリーンリーダー
+---------------------------------------------*/
+.visually-hidden:not(:focus-visible) {
+    position: absolute;
+    border: 0;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* 	lenis推奨スタイル
+---------------------------------------------*/
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}

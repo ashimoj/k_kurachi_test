@@ -1,0 +1,19 @@
+@use '../global' as *;
+
+//     text align
+// ===================== */
+.u-tal {
+  text-align: left !important;
+}
+
+.u-tac {
+  text-align: center !important;
+}
+
+.u-tar {
+  text-align: right !important;
+}
+
+.u-txt-uppercase {
+  text-transform: uppercase;
+}

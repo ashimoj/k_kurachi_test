@@ -1,0 +1,61 @@
+---
+const { title } = Astro.props;
+---
+
+<header id="header" class="l-header js-header">
+    <div class="l-header__inner">
+        <a href="#main" class="l-header__skip-content visually-hidden">本文にスキップ</a>
+
+        <h1 class="l-header__logo">
+            <span class="visually-hidden">{title}</span>
+            <a href="/" class="l-header__logo-link">
+                <img src="/assets/images/common/logo.svg" alt="株式会社" />
+            </a>
+        </h1>
+
+        <!-- PCナビゲーション -->
+        <div class="l-navigation">
+            <ul class="l-navigation__list">
+                <li class="l-navigation__item">
+                    <a href="/" class="l-navigation__link"> TOPページ </a>
+                </li>
+                <li class="l-navigation__item">
+                    <a href="/about/" class="l-navigation__link"> 下層ページ1 </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ハンバーガー -->
+        <button type="button" class="c-hamburger js-drawer-hamburger" aria-expanded="false" aria-controls="navigation" aria-label="メニューを開く">
+            <span class="-bar"></span>
+            <span class="-bar"></span>
+            <span class="-bar"></span>
+            <!-- <p class="c-hamburger__txt js-drawer-hamburger__txt">menu</p> -->
+        </button>
+
+        <!-- SPドロワーメニュー -->
+        <div id="navigation" class="l-drawer js-drawer-navigation" aria-hidden="true">
+            <div class="l-drawer__overlay" tabindex="-1" data-micromodal-close>
+                <div class="l-drawer__content" role="dialog" aria-modal="true" aria-labelledby="navigation-title">
+                    <div class="l-drawer__header">
+                        <h2 class="l-drawer__title visually-hidden" id="navigation-title">サイト内メニュー</h2>
+                        <button type="button" id="navigationCloseBtn" class="c-hamburger visually-hidden" aria-labelledby="navigationCloseTitle" data-micromodal-close>
+                            <span id="navigationCloseTitle" class="visually-hidden">モーダルを閉じる</span>
+                        </button>
+                    </div>
+
+                    <nav class="l-drawer__nav">
+                        <ul class="l-drawer__list">
+                            <li class="l-drawer__item">
+                                <a href="/" class="l-drawer__link">TOPページ</a>
+                            </li>
+                            <li class="l-drawer__item">
+                                <a href="/about/" class="l-drawer__link">下層ページ1</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div><!-- l-header__inner -->
+</header>

@@ -1,0 +1,43 @@
+@use '../global' as *;
+
+.c-breadcrumb {
+  --gap: 10px;
+
+  margin-inline: auto;
+  width: var(--inner-sp);
+  max-width: var(--inner);
+
+  .c-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+
+  .c-breadcrumb__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+
+    &:not(:last-of-type) {
+      &::after {
+        content: '';
+        width: 6px;
+        height: 10px;
+        background-color: var(--clr_border);
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+    }
+  }
+
+  .c-breadcrumb__link {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}

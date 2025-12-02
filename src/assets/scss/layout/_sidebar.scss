@@ -1,0 +1,14 @@
+@use '../global' as *;
+
+.l-sidebar {
+  .l-sidebar__list {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .l-sidebar__link {
+    display: block;
+  }
+}

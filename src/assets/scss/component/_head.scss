@@ -1,0 +1,28 @@
+@use "../global/" as *;
+
+/*  c-head01
+----------------------------------- */
+.c-head01{
+  position: relative;
+  padding-left: 20px;
+  @include font_title;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: var(--clr_primary);
+    left: 0;
+    top: 5px;
+  }
+}
+
+/*  c-head02
+----------------------------------- */
+.c-head02{
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  @include font_title;
+  border-bottom: 1px solid var(--clr_border);
+}

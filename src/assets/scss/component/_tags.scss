@@ -1,0 +1,20 @@
+@use '../global' as *;
+
+.c-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  .c-tags__link {
+    display: inline-block;
+    font-size: rem(14);
+    color: var(--clr_text_gray);
+    position: relative;
+    z-index: 2;
+
+    @include hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}

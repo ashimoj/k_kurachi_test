@@ -1,0 +1,25 @@
+@use "../global/" as *;
+
+/*  c-table01
+----------------------------------- */
+.c-table01{
+  table{
+    table-layout: fixed;
+    border: 1px solid var(--clr_border);
+  }
+  th,
+  td {
+    display: block;
+    width: auto;
+    padding: 15px 20px;
+    border: 1px solid var(--clr_border);
+  }
+  th {
+    background: var(--clr_bg);
+  }
+  @media screen and (min-width : 1024px) {
+    th,td{
+      display: table-cell;
+    }
+  }
+}

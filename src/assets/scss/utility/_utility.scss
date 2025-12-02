@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../global/" as *;
+
+// /* =====================
+//     表示
+// ===================== */
+.u-view-small {
+    @include mq(medium) {
+        display: none !important;
+    }
+}
+.u-view-medium {
+    @media not screen and (min-width: #{map.get($breakpoints, "medium")}) {
+        display: none !important;
+    }
+    @include mq(large) {
+        display: none !important;
+    }
+}
+.u-view-large {
+    @media not screen and (min-width: #{map.get($breakpoints, "large")}) {
+        display: none !important;
+    }
+    @include mq(full) {
+        display: none !important;
+    }
+}
+.u-view-full {
+    @media not screen and (min-width: #{map.get($breakpoints, "full")}) {
+        display: none !important;
+    }
+}
+.u-view-under-medium {
+    @include mq(large) {
+        display: none !important;
+    }
+}
+.u-view-upper-large {
+    @media not screen and (min-width: #{map.get($breakpoints, "large")}) {
+        display: none !important;
+    }
+}

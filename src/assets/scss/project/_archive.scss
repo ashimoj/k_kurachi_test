@@ -1,0 +1,16 @@
+@use '../global' as *;
+
+// =============================
+// 通常投稿一覧
+// =============================
+.p-archive {
+  .p-archive__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include mq(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

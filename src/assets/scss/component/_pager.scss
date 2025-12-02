@@ -1,0 +1,177 @@
+@use "../global" as *;
+
+// =============================
+// 一覧ページャー
+// =============================
+.c-pager-archive {
+    --pager-gap: 40px;
+    --pager-child-gap: 16px;
+    --btn-size: 40px;
+    --number-size: 40px;
+
+    margin-block: 60px 80px;
+    .c-pager-archive__inner {
+        margin-inline: auto;
+        width: fit-content;
+        max-width: calc(100% - var(--pager-gap) * 2 - var(--btn-size) * 2);
+        position: relative;
+    }
+
+    .c-pager-archive__prev,
+    .c-pager-archive__next {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+    }
+    .c-pager-archive__prev {
+        right: calc(100% + var(--pager-gap));
+    }
+    .c-pager-archive__next {
+        left: calc(100% + var(--pager-gap));
+    }
+
+    //先頭・最後のリンク
+    .c-pager-archive__prev-link,
+    .c-pager-archive__next-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        border: 1px solid var(--clr_border);
+        transition: var(--transition);
+        transition-property: background-color;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 12px;
+            background-color: var(--clr_default);
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            transition: var(--transition);
+            transition-property: background-color;
+        }
+
+        @include hover {
+            background-color: var(--clr_default);
+
+            &::before {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .c-pager-archive__prev-link {
+        &::before {
+            rotate: 180deg;
+        }
+    }
+
+    //各ページリンク
+    .c-pager-archive__number-child {
+        display: flex;
+        align-items: center;
+        gap: var(--pager-child-gap);
+    }
+    .c-pager-archive__number-child-link {
+        width: var(--number-size);
+        height: var(--number-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        &.-current {
+            color: #fff;
+            background-color: var(--clr_default);
+        }
+
+        &:not(.-current) {
+            border: 1px solid var(--clr_default);
+            transition: var(--transition);
+            transition-property: color, background-color;
+
+            @include hover {
+                color: #fff;
+                background-color: var(--clr_default);
+            }
+        }
+    }
+
+    @include mq(large) {
+        --pager-gap: 60px;
+        --pager-child-gap: 24px;
+        --btn-size: 60px;
+        --number-size: 60px;
+    }
+}
+
+// =============================
+// 詳細ページャー
+// =============================
+.c-pager-single {
+    --pager-gap: 40px;
+    --btn-size: 40px;
+
+    margin: 60px auto 80px;
+    width: fit-content;
+    max-width: calc(100% - var(--pager-gap) * 2 - var(--btn-size) * 2);
+    min-height: var(--btn-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .c-pager-single-prev,
+    .c-pager-single-next {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+    }
+    .c-pager-single-prev {
+        right: calc(100% + var(--pager-gap));
+    }
+    .c-pager-single-next {
+        left: calc(100% + var(--pager-gap));
+    }
+
+    .c-pager-single-prev__link,
+    .c-pager-single-next__link {
+        width: var(--btn-size);
+        height: var(--btn-size);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--clr_default);
+        transition: var(--transition);
+        transition-property: background-color;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 12px;
+            background-color: var(--clr_default);
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            transition: var(--transition);
+            transition-property: background-color;
+        }
+
+        @include hover {
+            background-color: var(--clr_default);
+
+            &::before {
+                background-color: #fff;
+            }
+        }
+    }
+    .c-pager-single-prev__link {
+        &::before {
+            rotate: 180deg;
+        }
+    }
+
+    @include mq(large) {
+        --pager-gap: 60px;
+        --btn-size: 60px;
+    }
+}

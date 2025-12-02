@@ -1,0 +1,11 @@
+@use '../global' as *;
+
+/*  p-privacy
+----------------------------------- */
+.p-privacy{
+  .p-privacy__item{
+    &:nth-child(n+2) {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use 'sass:math';
+@use '../settings' as *;
+// ----------------------------------------
+// Rem
+// ----------------------------------------
+@function rem($size, $base: var(--base)) {
+  @return calc(($size / $base) * 1rem);
+}
+
+// ----------------------------------------
+// Clamp関数
+// ----------------------------------------
+@function calc_clamp($fs_min, $fs_max, $width_small: 560, $width_large: 1200) {
+  $preferred_vw_base: math.div(($fs_max - $fs_min), ($width_large - $width_small));
+  $preferred_vw: ($preferred_vw_base * 100) * 1vw;
+  $preferred_rem: ($width_small * -1 * $preferred_vw_base + $fs_min);
+  @return (clamp(($fs_min * 0.0625rem), ($preferred_rem * 0.0625rem) + $preferred_vw, ($fs_max * 0.0625rem)));
+}
+
+// ----------------------------------------
+// hover
+// ----------------------------------------
+@mixin hover($i: none) {
+  @if $i == none {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        @content;
+      }
+    }
+    &:focus-visible {
+      @content;
+    }
+  }
+
+  @if $i == a {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover::after {
+        @content;
+      }
+      &:focus-visible::after {
+        @content;
+      }
+    }
+  }
+  @if $i == b {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover::before {
+        @content;
+      }
+      &:focus-visible::before {
+        @content;
+      }
+    }
+  }
+}
