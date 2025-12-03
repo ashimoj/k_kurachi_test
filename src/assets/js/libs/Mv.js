@@ -22,7 +22,7 @@ function mvAnim(){
 }
 
 // ============================================
-// MV
+// フッター上の画像たち
 // ============================================
 function mvEndAnim(){
   const endMv = document.querySelector('.js-mv-end');
@@ -48,9 +48,9 @@ function mvEndAnim(){
       })
       .to(".js-mv-end__img", {
         opacity: 0,
-        duration: 2,
+        duration: 3,
         delay: 3,
-        ease: "power2.out",
+        ease: "back.in(1.7)",
       });
     });
   }

@@ -9,12 +9,12 @@
   }
 
   // 発火後
-  .js-mv__img.-left.show{
+  .js-mv__img.-right.show{
     rotate: 10deg;
     transform-origin: bottom left;
     translate: 50% -50%;
   }
-  .js-mv__img.-right.show{
+  .js-mv__img.-left.show{
     rotate: -10deg;
     translate: -150% -50%;
     transform-origin: bottom right;
